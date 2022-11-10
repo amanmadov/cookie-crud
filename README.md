@@ -13,7 +13,8 @@
 </div>
 
 
-![Product Name Screen Shot](https://amanmadov.github.io/cookie-crud/images/cookie-app.png)
+<p align="center"><img src="https://amanmadov.github.io/cookie-crud/images/cookie-app.png"></p>
+
 
 
 <!-- ABOUT THE PROJECT -->
