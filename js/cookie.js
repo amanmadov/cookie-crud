@@ -59,7 +59,8 @@ const createCookiesTable = (cookies) => {
                         </tbody>
                     </table>`;
 
-    // rendering created table           
+    // rendering created table
+    if(output.classList.contains('danger')) output.classList.remove('danger');      
     output.innerHTML = tableStr;
 }
 
