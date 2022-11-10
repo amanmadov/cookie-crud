@@ -1,5 +1,5 @@
 <div align="center">
-<p align="right"><img src="https://img.shields.io/badge/License-MIT-yellow.svg"></p>
+<p align="center"><img src="https://img.shields.io/badge/License-MIT-yellow.svg"></p>
 
 
   <h2 align="center">Touro University Graduate School of Technology</h2>
