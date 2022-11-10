@@ -1,11 +1,5 @@
 <p align="right"><img src="https://img.shields.io/badge/License-MIT-yellow.svg"></p>
 
-<!-- PROJECT LOGO -->
-<br/>
-<div align="center">
-  <a href="https://github.com/amanmadov/cookie-crud">
-    <img src="images/touro-logo.png" alt="Logo">
-  </a>
 
   <h2 align="center">Touro University Graduate School of Technology</h2>
   <h3 align="center">MSIN 625 Advanced Web and Application Development Course Class Project</h3>
