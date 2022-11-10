@@ -13,7 +13,7 @@
 </div>
 
 
-![Product Name Screen Shot](https://amanmadov.github.io/msin617-final-project/images/screenshot.png)
+![Product Name Screen Shot](https://amanmadov.github.io/cookie-crud/images/cookie-app.png)
 
 
 <!-- ABOUT THE PROJECT -->
