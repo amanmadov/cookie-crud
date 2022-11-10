@@ -43,6 +43,6 @@ Simple Cookie Management App with Vanilla Javascript
 
 Nury Amanmadov - [@amanmadov](https://twitter.com/amanmadov) - amanmadov@gmail.com
 
-Project Link: [https://github.com/amanmadov/msin617-final-project](https://github.com/amanmadov/cookie-crud)
+Project Link: [https://github.com/amanmadov/cookie-crud](https://github.com/amanmadov/cookie-crud)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
