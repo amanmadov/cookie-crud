@@ -1,0 +1,141 @@
+/*
+    MSIN 625 Project1 Cookie CRUD
+    by Nury Amanmadov
+*/
+
+input {
+    display: block;
+    font-size: 1.5em;
+    width: 75%;
+}
+
+.output {
+    padding-top: 20px;
+    font-size: 24px;
+    font-weight: 600;
+    color: blue;
+}
+
+.danger {
+    color: #E34124;
+    font-weight: 600;
+}
+
+
+
+/* Custom button style */
+
+#btnSetCookie {
+    background-color: #E3D03B;
+}
+
+#btnGetCookie,
+#btnDisplayAllCookies {
+    background-color: #24E392;
+}
+
+#btnDeleteCookie {
+    background-color: #E34124;
+}
+
+.btn {
+    font-family: "Lato";
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 2px;
+    background-color: transparent;
+    border: 3px solid #333;
+    padding: 12px 12px;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.btn:hover,
+button:hover {
+    outline: 0;
+    color: #fff;
+}
+
+.btn:active,
+button:active {
+    outline: 0;
+    color: #fff;
+}
+
+.btn-slide-left {
+    background: linear-gradient(to left, transparent 50%, #333 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+}
+
+.btn-slide-left:hover {
+    background-position: left bottom;
+}
+
+
+
+/* Custom Input Style */
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body {
+    background: #fff;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.searchTerm {
+    width: 100%;
+    border: 3px solid #333;
+    padding: 5px 5px 15px 5px;
+    height: 20px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #000;
+    width: 30%;
+    margin-bottom: 10px;
+}
+
+.searchTerm:focus {
+    color: #000;
+}
+
+
+
+/* Custom table style */
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #d1d0d0;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
