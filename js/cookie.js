@@ -13,10 +13,12 @@
 const getExpireDate = (offsetDay) => {
     const now = new Date();
     now.setDate(now.getDate() + offsetDay);
+
     let day = ('0' + (now.getDate())).slice(-2);
     let month = ('0' + (now.getMonth() + 1)).slice(-2);
     let year = now.getFullYear();
-    return `${year}-${month}-${day}`
+
+    return `${year}-${month}-${day}`;
 }
 
 // function to style output text
@@ -64,12 +66,21 @@ const createCookiesTable = (cookies) => {
     output.innerHTML = tableStr;
 }
 
+const updateOutputLabel = (element, className, textContent) => {
+    colorizeOutput(element, className);
+    output.textContent = textContent;
+}
+
 //#endregion
 
 // elements
 const buttons = document.querySelectorAll('button');
 const inputs = document.querySelectorAll('input');
 const output = document.querySelector('.output');
+
+
+
+//#region CRUD Functions  
 
 const setCookie = (cookieObj) => {
 
@@ -78,12 +89,11 @@ const setCookie = (cookieObj) => {
 
     if (cookieValue.trim().length > 0) {
         document.cookie = `${cookieName.trim()}=${encodeURIComponent(cookieValue.trim())};path=/;expires=${cookieExpire.toUTCString()}`;
-        colorizeOutput(output,'')
-        output.textContent = `Cookie is set for CookieName '${cookieName}!'`;
-    } else {
-        colorizeOutput(output,'danger')
-        output.textContent = `Cookie needs a value!!!`
+        updateOutputLabel(output, '', `Cookie is set for CookieName '${cookieName}!'`);
+        return;
     }
+    
+    updateOutputLabel(output, 'danger', `Cookie needs a value!!!`);
 }
 
 const getCookie = (cookieName) => {
@@ -94,12 +104,10 @@ const getCookie = (cookieName) => {
         cookie.trim();
         let cookieValues = cookie.split('=');
         if (cookieValues[0].trim() === cookieName) {
-            colorizeOutput(output,'');
-            output.textContent = `Cookie found. The value for the cookieName '${cookieValues[0]}' is '${decodeURIComponent(cookieValues[1])}'`;
-            return true;
+            updateOutputLabel(output, '', `Cookie found. The value for the cookieName '${cookieValues[0]}' is '${decodeURIComponent(cookieValues[1])}'`);
+            return;
         }
-        colorizeOutput(output,'danger');
-        output.textContent = 'No cookies found. Please try again.';
+        updateOutputLabel(output, 'danger', `No cookies found. Please try again.`);
     })
 }
 
@@ -110,14 +118,12 @@ const deleteCookie = (cookieName) => {
     // check if cookie with the given name exists
     if(cookies.filter(cookie => cookie.split('=')[0].trim() === cookieName).length > 0){
         document.cookie = `${cookieName}=''; path=/; expires='Thu, 01 Jan 1970 00:00:01 GMT';`;
-        colorizeOutput(output,'');
-        output.textContent = `Cookie with the name '${cookieName}' has been deleted!`
-        return true;
+        updateOutputLabel(output, '', `Cookie with the name '${cookieName}' has been deleted!`);
+        return;
     }
 
     // cookie does not exist
-    colorizeOutput(output,'danger');
-    output.textContent = `Cookie with the name '${cookieName}' has not been found!`;
+    updateOutputLabel(output, 'danger', `Cookie with the name '${cookieName}' has not been found!`);
 }
 
 const allCookies = () => {
@@ -126,9 +132,8 @@ const allCookies = () => {
 
     // check if any cookie exist
     if(!cookies[0].includes('=')){
-        colorizeOutput(output,'danger');
-        output.textContent = 'No cookies found. Please try again.';
-        return true;
+        updateOutputLabel(output, 'danger', `No cookies found. Please try again.`);
+        return;
     }
 
     // cookies exist
@@ -153,6 +158,8 @@ const clickHandler = (e) => {
     if (action === 'delete') deleteCookie(c.cookieName);
     if (action === 'all') allCookies();
 }
+
+//#endregion
 
 // Sets default value for date input
 document.addEventListener('DOMContentLoaded', () => {
