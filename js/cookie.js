@@ -84,7 +84,6 @@ const inputs = document.querySelectorAll('input');
 const output = document.querySelector('.output');
 
 
-
 //#region CRUD Functions  
 
 const setCookie = (cookieObj) => {
@@ -103,16 +102,13 @@ const setCookie = (cookieObj) => {
 }
 
 const getCookie = (cookieName) => {
-
     let cookies = document.cookie.split(';');
-
     cookies.some(cookie => {
-        cookie.trim();
         let cookieValues = cookie.split('=');
-        clearTextInputs();
         if (cookieValues[0].trim() === cookieName) {
             updateOutputLabel(output, '', `Cookie found. The value for the cookieName '${cookieValues[0]}' is '${decodeURIComponent(cookieValues[1])}'`);
-            return;
+            clearTextInputs();
+            return true;
         }
         updateOutputLabel(output, 'danger', `No cookies found. Please try again.`);
     })
