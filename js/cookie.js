@@ -71,6 +71,11 @@ const updateOutputLabel = (element, className, textContent) => {
     output.textContent = textContent;
 }
 
+const clearTextInputs = () => {
+    document.querySelector('#cookieName').value = '';
+    document.querySelector('#cookieValue').value = '';
+}
+
 //#endregion
 
 // elements
@@ -89,6 +94,7 @@ const setCookie = (cookieObj) => {
 
     if (cookieValue.trim().length > 0) {
         document.cookie = `${cookieName.trim()}=${encodeURIComponent(cookieValue.trim())};path=/;expires=${cookieExpire.toUTCString()}`;
+        clearTextInputs();
         updateOutputLabel(output, '', `Cookie is set for CookieName '${cookieName}!'`);
         return;
     }
@@ -103,6 +109,7 @@ const getCookie = (cookieName) => {
     cookies.some(cookie => {
         cookie.trim();
         let cookieValues = cookie.split('=');
+        clearTextInputs();
         if (cookieValues[0].trim() === cookieName) {
             updateOutputLabel(output, '', `Cookie found. The value for the cookieName '${cookieValues[0]}' is '${decodeURIComponent(cookieValues[1])}'`);
             return;
@@ -119,6 +126,7 @@ const deleteCookie = (cookieName) => {
     if(cookies.filter(cookie => cookie.split('=')[0].trim() === cookieName).length > 0){
         document.cookie = `${cookieName}=''; path=/; expires='Thu, 01 Jan 1970 00:00:01 GMT';`;
         updateOutputLabel(output, '', `Cookie with the name '${cookieName}' has been deleted!`);
+        clearTextInputs();
         return;
     }
 
@@ -149,7 +157,7 @@ const clickHandler = (e) => {
     // creates cookie object
     inputs.forEach((input) => {
         let attributeName = input.getAttribute('name');
-        let attributeValue = (attributeName !== 'cookieExpire' ? input.value : input.valueAsDate);
+        let attributeValue = (attributeName !== 'cookieExpire' ? input.value.trim() : input.valueAsDate);
         c[attributeName] = attributeValue;
     })
 
