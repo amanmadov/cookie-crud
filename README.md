@@ -1,16 +1,18 @@
+<img src="images/touro-university-logo-blue.png" width=80 alt="Logo" align="left"><img align="right" src="https://img.shields.io/badge/License-MIT-yellow.svg" width=100>
+
+<!-- PROJECT LOGO -->
+<br/>
 <div align="center">
-<p align="center"><img src="https://img.shields.io/badge/License-MIT-yellow.svg"></p>
-
-
-  <h2 align="center">Touro University Graduate School of Technology</h2>
-  <h3 align="center">MSIN 625 Advanced Web and Application Development Course Class Project</h3>
-
-  <p align="center">
-    Simple App For Cookie Management
-    <br/> <br/>
-    <a href="https://amanmadov.github.io/cookie-crud/index.html">View Demo</a>
-  </p>
+    <h3 align="center">Graduate School of Technology<br>MSIN 616-Advanced Database Management Course Class Project</h3>
 </div>
+
+<br/>
+
+<p align="center">
+  Simple App For Cookie Management
+  <br/> <br/>
+  <a href="https://amanmadov.github.io/cookie-crud/index.html">View Demo</a>
+</p>
 
 
 <p align="center"><img src="https://amanmadov.github.io/cookie-crud/images/cookie-app.png"></p>
