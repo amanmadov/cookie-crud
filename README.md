@@ -9,7 +9,7 @@
 <br/>
 
 <p align="center">
-  Simple App For Cookie Management
+  Simple App For Cookie Management with Vanilla JavaScript
   <br/> <br/>
   <a href="https://amanmadov.github.io/cookie-crud/index.html">View Demo</a>
 </p>
